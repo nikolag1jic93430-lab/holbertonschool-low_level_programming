@@ -1,21 +1,15 @@
 #include "main.h"
 
 /**
- * print_chessboard - prints the chessboard
- * @a: array representing the board
+ * main - check the code
  *
- * Return: void
+ * Return: Always 0.
  */
-void print_chessboard(char (*a)[8])
+int main(void)
 {
-	int i, j;
+    char *str;
 
-	for (i = 0; i < 8; i++)
-	{
-		for (j = 0; j < 8; j++)
-		{
-			_putchar(a[i][j]);
-		}
-		_putchar('\n');
-	}
+    str = "0123456789";
+    puts_half(str);
+    return (0);
 }
