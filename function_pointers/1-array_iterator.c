@@ -2,23 +2,24 @@
 #include "function_pointers.h"
 
 /**
- * array_iterator - apply func to each element of array
+ * int_index - compare element of array
  * @array: array
  * @size: size
- * @action: ptr to f
- * Return: void
+ * @cmp: f cmp
+ * Return: -1 or 0 or index to first cmp match
  */
 
-void array_iterator(int *array, size_t size, void (*action)(int))
+int int_index(int *array, int size, int (*cmp)(int))
 {
-	size_t i = 0;
+	int i = 0;
 
-	if (!array || !size || !action)
-		return;
-
+	if (!array || size <= 0 || !cmp)
+		return (-1);
 	while (i < size)
 	{
-		action(array[i]);
+		if (cmp(array[i]) != 0)
+			return (i);
 		i++;
 	}
+	return (-1);
 }
